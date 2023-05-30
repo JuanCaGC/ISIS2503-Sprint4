@@ -21,31 +21,18 @@
 
             <div class="panel panel-default">
                 <div class="panel-body">
+                    
 
-                    <table class="table table-hover">
-                        <thead>
-                        <tr style="color:#0E2EB0">
-                            <th>Paciente</th>
-                            <th>Identificacion</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        {% for paciente in paciente_list %}
-                        <tr>
-                            <td>{{ paciente.name }}</td>
-                            <td>{{ paciente.identificacion }}</td>
-                            <td>{{ paciente.edad }}</td>
-                            {% for historia in paciente.historia_set.all %}
-                                <td> {{historia.descripcion}}</td>
-                                <td> {{historia.medicamentos}}</td>
-                            {% endfor %}
-                        </tr>
+                    {% for paciente in paciente_list %}
+                        <li>{{ paciente.name }}</li>
+                        <li>{{ paciente.identificacion }}</li>
+                        <li>{{ paciente.edad }}</li>
+                        {% for historia in paciente.historia_set.all %}
+                            <li>{{ historia.descripcion }}</li>
+                            <td> {{historia.medicamentos}}</td>
                         {% endfor %}
-
-                        </tbody>
-                    </table>
-
+                    {% endfor %}
+                
                     <div style="text-align:center;">
                         <button type="button" class="btn btn-primary waves-effect waves-light"
                                 onClick=" window.location.href='/' ">

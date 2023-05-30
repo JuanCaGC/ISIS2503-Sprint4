@@ -29,11 +29,13 @@
                         <em>Enfermedades</em>
                         {% for historia in paciente.historia_set.all %}
                             <li>{{ historia.descripcion }}</li>
+                            <em></em>
                         {% endfor %}
 
                         <em>Medicamentos</em>
                         {% for historia in paciente.historia_set.all %}
                             <li> {{historia.medicamentos}}<li>
+                            <em></em>
                         {% endfor %}
                     {% endfor %}
                 

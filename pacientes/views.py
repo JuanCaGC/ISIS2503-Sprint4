@@ -31,7 +31,7 @@ def pacientes_medico(request):
     if role == "Medico":
         pacientes = get_pacientesPorMedico(idMedico)
         context = {'paciente_list' : pacientes}
-        return render(request, 'Pacietnes/asr.html', context)
+        return render(request, 'Pacientes/asr.html', context)
     else:
         return render(request, 'Pacientes/errorPaciente.html')
 

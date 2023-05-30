@@ -25,14 +25,17 @@
                         <b> Nombre: {{ paciente.name }} - Identificacion: {{paciente.identificacion}} - Edad: {{paciente.edad}} <br></b>
                         <em>Enfermedades</em>
                         {% for historia in paciente.historia_set.all %}
-                            <li>{{ historia.descripcion }}<br></li>
+                            <li>{{ historia.descripcion }}</li>
+                            <br>
                         {% endfor %}
 
                         <em>Medicamentos</em>
                         {% for historia in paciente.historia_set.all %}
-                            <li> {{historia.medicamentos}}<br><li>
+                            <li> {{historia.medicamentos}}<li>
+                            <br>
                         {% endfor %}
                         <br>
+                        
                     {% endfor %}
                 
                     <div style="text-align:center;">

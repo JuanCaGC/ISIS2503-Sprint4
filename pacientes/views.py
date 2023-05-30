@@ -4,9 +4,9 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import PacienteForm
-from .logic.paciente_logic import get_pacientes, create_paciente
+from .logic.paciente_logic import get_pacientes, create_paciente, get_pacientesPorMedico
 from django.contrib.auth.decorators import login_required
-from widmy.auth0backend import getRole
+from widmy.auth0backend import getRole, getId
 
 
 @login_required
@@ -19,7 +19,18 @@ def paciente_list(request):
         }
         return render(request, 'Pacientes/pacientes.html', context)
     else:
-        return HttpResponse("Unauthorized User")
+        return render(request, 'Pacientes/errorPaciente.html')
+
+@login_required
+def pacientes_medico(request):
+    id = getId(request)
+    role = getRole(request)
+    if role == "Medico":
+        pacientes = get_pacientesPorMedico(id)
+        context = {'paciente_list' : pacientes}
+        return render(request, 'Pacietnes/asr.html', context)
+    else:
+        return render(request, 'Pacientes/errorPaciente.html')
 
 
 @login_required
@@ -42,4 +53,4 @@ def paciente_create(request):
         }
         return render(request, 'Pacientes/pacienteCreate.html', context)
     else:
-        return HttpResponse("Unauthorized User")
+        return render(request, 'Pacientes/errorPaciente.html')

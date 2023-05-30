@@ -12,3 +12,8 @@ def create_paciente(form):
 def get_paciente(pkd):
     paciente = Paciente.objects.get(pk=pkd)
     return (paciente)
+
+
+def get_pacientesPorMedico(idMed):
+    pacientes = Paciente.objects.filter(idMedico==idMed).order_by('edad')
+    return (pacientes)

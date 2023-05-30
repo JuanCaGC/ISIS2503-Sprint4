@@ -9,6 +9,9 @@
                 <button type="button" class="btn btn-success waves-effect waves-light"
                         onClick=" window.location.href='/pacientecreate' " style="text-align:center;">+
                 </button>
+                <button type="button" class="btn btn-success waves-effect waves-light"
+                        onClick=" window.location.href='/pacientemedicos' " style="text-align:center;">Suyos
+                </button>
             </div>
         </div>
     </div>
@@ -35,6 +38,7 @@
                         <tr>
                             <td>{{ paciente.name }}</td>
                             <td>{{ paciente.identificacion }}</td>
+                            <td>{{ paciente.edad }}</td>
                         </tr>
                         {% endfor %}
 

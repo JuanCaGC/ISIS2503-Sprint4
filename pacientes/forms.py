@@ -8,10 +8,12 @@ class PacienteForm(forms.ModelForm):
         fields = [
             'name',
             'identificacion',
+            'edad',
             'idMedico'
         ]
         labels = {
             'name': 'Name',
             'identificacion': 'Identificacion',
+            'edad': 'Edad',
             'idMedico': 'Identificacion Medico'
         }

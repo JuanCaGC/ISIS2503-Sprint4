@@ -25,6 +25,7 @@ def paciente_list(request):
 def pacientes_medico(request):
     idMedico = getId(request)
     role = getRole(request)
+    algo = 1
     print(idMedico)
     print(role)
     if role == "Medico":

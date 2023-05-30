@@ -23,10 +23,12 @@ def paciente_list(request):
 
 @login_required
 def pacientes_medico(request):
-    id = getId(request)
+    idMedico = getId(request)
     role = getRole(request)
+    print(idMedico)
+    print(role)
     if role == "Medico":
-        pacientes = get_pacientesPorMedico(id)
+        pacientes = get_pacientesPorMedico(idMedico)
         context = {'paciente_list' : pacientes}
         return render(request, 'Pacietnes/asr.html', context)
     else:

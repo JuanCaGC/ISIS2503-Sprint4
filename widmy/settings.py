@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'widmy.wsgi.application'
 DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'NAME': 'monitoring_db',
-         'USER': 'monitoring_user',
+         'NAME': 'pacientes-db',
+         'USER': 'pacientes_user',
          'PASSWORD': 'isis2503',
-         'HOST': '172.22.160.3',
+         'HOST': '10.128.0.6',
          'PORT': '5432',
      }
  }

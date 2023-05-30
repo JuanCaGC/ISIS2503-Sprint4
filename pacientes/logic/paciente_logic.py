@@ -16,5 +16,10 @@ def get_paciente(pkd):
 
 def get_pacientesPorMedico(idMed):
     print(idMed)
-    pacientes = Paciente.objects.filter(idMedico==idMed).order_by('edad')
-    return (pacientes)
+    pacientes = Paciente.objects.all()
+    rta = []
+    for paciente in pacientes:
+        if paciente.idMedico == idMed:
+            rta.append(paciente)
+
+    return (rta)

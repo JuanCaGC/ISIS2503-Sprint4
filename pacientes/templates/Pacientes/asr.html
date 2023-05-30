@@ -24,12 +24,16 @@
                     
 
                     {% for paciente in paciente_list %}
-                        <li>{{ paciente.name }}</li>
-                        <li>{{ paciente.identificacion }}</li>
-                        <li>{{ paciente.edad }}</li>
+
+                        <b> Nombre: {{ paciente.name }} - Identificacion: {{paciente.identificacion}} - Edad: {{paciente.edad}}</b>
+                        <em>Enfermedades</em>
                         {% for historia in paciente.historia_set.all %}
                             <li>{{ historia.descripcion }}</li>
-                            <td> {{historia.medicamentos}}</td>
+                        {% endfor %}
+
+                        <em>Medicamentos</em>
+                        {% for historia in paciente.historia_set.all %}
+                            <li> {{historia.medicamentos}}<li>
                         {% endfor %}
                     {% endfor %}
                 

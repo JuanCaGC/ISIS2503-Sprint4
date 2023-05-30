@@ -6,9 +6,6 @@
         <div class="page-header-title">
             <h4 class="page-title">Pacientes</h4>
             <div style="text-align:right;">
-                <button type="button" class="btn btn-success waves-effect waves-light"
-                        onClick=" window.location.href='/pacientecreate' " style="text-align:center;">+
-                </button>
             </div>
         </div>
     </div>
@@ -25,7 +22,7 @@
 
                     {% for paciente in paciente_list %}
 
-                        <b> Nombre: {{ paciente.name }} - Identificacion: {{paciente.identificacion}} - Edad: {{paciente.edad}}</b>
+                        <b> Nombre: {{ paciente.name }} - Identificacion: {{paciente.identificacion}} - Edad: {{paciente.edad}} <br></b>
                         <em>Enfermedades</em>
                         {% for historia in paciente.historia_set.all %}
                             <li>{{ historia.descripcion }}<br></li>
@@ -35,6 +32,7 @@
                         {% for historia in paciente.historia_set.all %}
                             <li> {{historia.medicamentos}}<br><li>
                         {% endfor %}
+                        <br>
                     {% endfor %}
                 
                     <div style="text-align:center;">
